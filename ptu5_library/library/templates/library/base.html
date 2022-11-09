@@ -9,9 +9,25 @@
     <link rel="stylesheet" href="{% static 'library/css/base.css' %}">
 </head>
 <body>
+    <header>
+        <div class="container">
+            {% block nav %}
+                <a href="{% url 'index' %}">Home</a>
+                <a href="{% url 'admin:index' %}">Admin</a>
+            {% endblock nav %}
+        </div>
+    </header>
     <main>
-       {% block content %}
-       {% endblock content %}
+        <div class="container">
+            {% block content %}
+            {% endblock content %}
+        </div>
     </main>
+    <footer>
+        <div class="container">
+            {% block footer%}<p>(C) 2022 PTU5</p>{% endblock footer %}
+            {# footer budas komentuoti#}
+        </div>
+    </footer>
 </bod
 </html>
