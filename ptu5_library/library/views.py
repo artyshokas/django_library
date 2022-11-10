@@ -18,3 +18,7 @@ def index(request):
    }
 
    return render(request, 'library/index.html', context=context)
+
+
+def authors(request):
+   return render(request, 'library/authors.html', {'authors': Author.objects.all()})
