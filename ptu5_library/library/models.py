@@ -43,6 +43,7 @@ class Book(models.Model):
         help_text='<a href="https://www.isbn-international.org/content/what-isbn" target="_blank">ISBN kodas</a> consisting of 13 symbols')
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True, blank=True, related_name='books', )
     genre = models.ManyToManyField(Genre, help_text='Choose genre(s) for this book', verbose_name='genre(s)')
+    cover = models.ImageField("cover", upload_to='covers', blank=True, null=True)
 
     def __str__(self) -> str:
         return f"{self.author} - {self.title}"

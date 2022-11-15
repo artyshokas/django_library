@@ -1,3 +1,5 @@
+from django.core.paginator import Paginator
+from django.db.models import Q 
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
 from . models import Genre, Author, Book, BookInstance
@@ -22,8 +24,14 @@ def index(request):
     return render(request, 'library/index.html', context)
 
 
+# def authors(request):
+#     return render(request, 'library/authors.html', {'authors': Author.objects.all()})
+
 def authors(request):
-    return render(request, 'library/authors.html', {'authors': Author.objects.all()})
+    paginator = Paginator(Author.objects.all(), 3)
+    page_number = request.GET.get('page')
+    paged_authors = paginator.get_page(page_number)
+    return render(request, 'library/authors.html', {'authors': paged_authors})
 
 def author(request, author_id):
     return render(request, 'library/author.html', {'author': get_object_or_404(Author, id=author_id)})
@@ -31,15 +39,19 @@ def author(request, author_id):
 
 class BookListView(ListView):
     model = Book
+    paginate_by = 5
     template_name = 'library/book_list.html'
 
 
     def get_queryset(self):
-      queryset = super().get_queryset()
-      genre_id = self.request.GET.get('genre_id')
-      if genre_id:
-         queryset = queryset.filter(genre__id=genre_id)
-      return queryset
+        queryset = super().get_queryset()
+        query = self.request.GET.get('query') # query tai url dalis kuris bus search fielde
+        if query:
+            queryset = queryset.filter(Q(title__icontains=query) | Q(summary__icontains=query))
+        genre_id = self.request.GET.get('genre_id')
+        if genre_id:
+            queryset = queryset.filter(genre__id=genre_id)
+        return queryset
       
 
     def get_context_data(self, **kwargs):
