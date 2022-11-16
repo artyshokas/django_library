@@ -4,6 +4,7 @@ import uuid
 from django.utils.html import format_html
 from django.utils.timezone import datetime
 from django.urls import reverse
+from tinymce.models import HTMLField
 
 class Genre(models.Model):
     name = models.CharField('name', max_length=200, help_text='Enter the name of the genre')
@@ -40,7 +41,7 @@ class Meta:
 
 class Book(models.Model):
     title = models.CharField('title', max_length=255)
-    summary = models.TextField('summary') # max_length nereikalingas su TextField
+    summary =  HTMLField('summary') # max_length nereikalingas su TextField
     isbn = models.CharField('ISBN', max_length=13, null=True, blank=True,
         help_text='<a href="https://www.isbn-international.org/content/what-isbn" target="_blank">ISBN kodas</a> consisting of 13 symbols')
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True, blank=True, related_name='books', )
