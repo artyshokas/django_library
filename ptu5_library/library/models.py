@@ -1,6 +1,8 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 import uuid
 from django.utils.html import format_html
+from django.utils.timezone import datetime
 from django.urls import reverse
 
 class Genre(models.Model):
@@ -80,6 +82,19 @@ class BookInstance(models.Model):
     # loan status didz raid yra konstanta, kuria aprasom lauko viduje. tai yra ne laukas
     status = models.CharField('status', max_length=1, choices=LOAN_STATUS, default='m') # nustatom defaultini loan statusa m - managed
     # price = models.DecimalField('price', max_digits=18, decimal_places=2) #  decimal_places - kiek po kablelio
+    reader = models.ForeignKey(
+        get_user_model(),
+        verbose_name="reader", 
+        on_delete=models.SET_NULL,
+        null=True, blank=True, 
+        related_name='taken_books', 
+    )
+
+    @property
+    def is_overdue(self):
+        if self.due_back and self.due_back < datetime.date(datetime.now()):
+            return True
+        return False
 
     def __str__(self) -> str:
         return f"{self.unique_id}: {self.book.title}" # mes per sasaja per modeli book, kreipiames i title. per foreign key
