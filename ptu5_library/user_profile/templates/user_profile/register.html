@@ -3,12 +3,6 @@
 {% block content %}
 <h1>Register Library account</h1>
 
-{% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-    {% endfor %}
-{% endif %}
-
 <form action="" method="post">
     {% csrf_token %}
     <div class="table-grid form-grid">
