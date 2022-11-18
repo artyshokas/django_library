@@ -10,9 +10,9 @@
     {% endif %}
     <div class="spacer">
         {% if user.first_name or user.last_name %}
-            <p>Name: {{ user.first_name}} {{ user.last_name }}</p>
+            <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
         {% endif %}
         <p>E-mail: {{ user.email }}</p>
     </div>
 </div>
-{% endblock content%}
+{% endblock content %}
