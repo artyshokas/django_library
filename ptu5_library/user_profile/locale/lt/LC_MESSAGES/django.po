@@ -1,0 +1,169 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-23 12:13+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
+"11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
+"1 : n % 1 != 0 ? 2: 3);\n"
+
+#: .\user_profile\templates\registration\logged_out.html:5
+msgid "Logged out"
+msgstr "Atsijungete"
+
+#: .\user_profile\templates\registration\logged_out.html:6
+msgid "Session closed successfully."
+msgstr "Sessija baigta"
+
+#: .\user_profile\templates\registration\logged_out.html:6
+msgid "Log in again"
+msgstr "Prisijungti is naujo"
+
+#: .\user_profile\templates\registration\login.html:8
+msgid "Login error, please try again."
+msgstr "Prisijungimo klaida, bandyk dar karta"
+
+#: .\user_profile\templates\registration\login.html:12
+msgid "Permission error. You need a permission to see this page."
+msgstr "Klaida. Reikia leidimo prisijungimui i sia svetaine"
+
+#: .\user_profile\templates\registration\login.html:19
+#: .\user_profile\templates\user_profile\register.html:10
+msgid "Username"
+msgstr "Vartotojo vardas"
+
+#: .\user_profile\templates\registration\login.html:23
+#: .\user_profile\templates\user_profile\register.html:14
+msgid "Password"
+msgstr "Slaptazodis"
+
+#: .\user_profile\templates\registration\login.html:35
+msgid "Forgot password"
+msgstr "Pamirsote slaptazodi"
+
+#: .\user_profile\templates\registration\password_reset_complete.html:3
+#: .\user_profile\templates\registration\password_reset_complete.html:5
+msgid "Password reset successfull"
+msgstr "Slaptazodis sekmingai pakeistas"
+
+#: .\user_profile\templates\registration\password_reset_complete.html:6
+#: .\user_profile\templates\user_profile\register.html:23
+msgid "log in"
+msgstr "Prisijungti"
+
+#: .\user_profile\templates\registration\password_reset_complete.html:6
+msgid "now"
+msgstr "dabar"
+
+#: .\user_profile\templates\registration\password_reset_confirm.html:3
+msgid "Password reset form"
+msgstr "Slaptazodzio keitimas"
+
+#: .\user_profile\templates\registration\password_reset_confirm.html:5
+msgid "Reset Password"
+msgstr "Pakeisti slaptazodi"
+
+#: .\user_profile\templates\registration\password_reset_confirm.html:10
+msgid "Reset password"
+msgstr "Pakeisti slaptazodi"
+
+#: .\user_profile\templates\registration\password_reset_confirm.html:13
+msgid "Error: bad link. Please request"
+msgstr "Nuorodos klaida. Uzklausti"
+
+#: .\user_profile\templates\registration\password_reset_confirm.html:13
+msgid "password reset"
+msgstr "Pakeisti slaptazodi"
+
+#: .\user_profile\templates\registration\password_reset_confirm.html:13
+msgid "again"
+msgstr "dar"
+
+#: .\user_profile\templates\registration\password_reset_done.html:3
+#: .\user_profile\templates\registration\password_reset_done.html:5
+msgid "Password reset email sent"
+msgstr "Slaptazodzio keitimo laiskas issiustas"
+
+#: .\user_profile\templates\registration\password_reset_done.html:6
+msgid "We've sent you an email with password reset link for your account."
+msgstr "Issiunteme Jums laiska su slaptazodzio keitimo nuoroda"
+
+#: .\user_profile\templates\registration\password_reset_email.html:2
+msgid "Hi! someone has requested to reset your password. You can do so here"
+msgstr "Kazkas uzprase jusu slaptazodzio keitima. Tai galit padaryt cia"
+
+#: .\user_profile\templates\registration\password_reset_email.html:4
+msgid "If it was not you, please ignore this email "
+msgstr "Jei tai buvote ne Jus, istrinkit si laiska"
+
+#: .\user_profile\templates\registration\password_reset_email.html:5
+msgid "Best wishes!"
+msgstr "Viso gero"
+
+#: .\user_profile\templates\registration\password_reset_form.html:3
+msgid "Forgot"
+msgstr "Pamirsote"
+
+#: .\user_profile\templates\registration\password_reset_form.html:3
+msgid "password"
+msgstr "slaptazodi"
+
+#: .\user_profile\templates\registration\password_reset_form.html:5
+msgid "Password request form"
+msgstr "Keitimo forma"
+
+#: .\user_profile\templates\registration\password_reset_form.html:12
+msgid "Reset"
+msgstr "Pakeisti"
+
+#: .\user_profile\templates\user_profile\profile.html:3
+#: .\user_profile\templates\user_profile\profile.html:5
+msgid "profile"
+msgstr "profilis"
+
+#: .\user_profile\templates\user_profile\profile.html:14
+msgid "Name"
+msgstr "Vardas"
+
+#: .\user_profile\templates\user_profile\profile.html:16
+#: .\user_profile\templates\user_profile\register.html:12
+msgid "E-mail"
+msgstr "Pastas"
+
+#: .\user_profile\templates\user_profile\profile.html:17
+#: .\user_profile\templates\user_profile\update_profile.html:19
+msgid "Update"
+msgstr "Atnaujinti"
+
+#: .\user_profile\templates\user_profile\register.html:5
+msgid "Register Library account"
+msgstr "Sukurti bibliotekos paskyra"
+
+#: .\user_profile\templates\user_profile\register.html:16
+msgid "Repeat password"
+msgstr "Pakartoti slaptazodi"
+
+#: .\user_profile\templates\user_profile\register.html:19
+msgid "Register"
+msgstr "Registruoti"
+
+#: .\user_profile\templates\user_profile\register.html:23
+msgid "If you already have an account you can"
+msgstr "Jei jau turite paskyra, jus galit"
+
+#: .\user_profile\templates\user_profile\update_profile.html:5
+msgid "Updating User Profile"
+msgstr "Atnaujinti paskyra"

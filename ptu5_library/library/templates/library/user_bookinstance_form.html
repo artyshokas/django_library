@@ -1,12 +1,13 @@
 {% extends 'library/base.html' %}
+{% load i18n %}
 {% block title %}Borrowing book from {{ block.super }}{% endblock title %}
 {% block content %}
-<h1>{% if action %}{{ action }}{% else %}Reserve{% endif %} a book</h1>
+<h1>{% if action %}{{ action }}{% else %}{% trans "Reserve" %}{% endif %} {% trans "a book" %}</h1>
 <div class="table-grid form-grid">
     <form action="" method="post">
         {% if book_instance %}<p>{{ book_instance.book }}</p>{% endif %}
         {% csrf_token %}
         {{ form.as_p }}
-        <p><button type="submit">{% if action %}{{ action }}{% else %}Reserve{% endif %}</button></p>
+        <p><button type="submit">{% if action %}{{ action }}{% else %}{% trans "Reserve" %}{% endif %}</button></p>
     </form>
 {% endblock content %}

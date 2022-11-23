@@ -8,6 +8,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.views.generic.edit import FormMixin
 from . models import Genre, Author, Book, BookInstance
 from .forms import BookReviewForm, BookInstanceForm, BookInstanceUpdateForm
+from django.utils.translation import gettext_lazy as _
 
 
 def index(request):
@@ -89,7 +90,7 @@ class BookDetailView(FormMixin, DetailView):
         if form.is_valid():
             return self.form_valid(form)
         else:
-            messages.error(self.request, "You're posting too much")
+            messages.error(self.request, _("You're posting too much"))
             return self.form_invalid(form)
 
 
@@ -97,7 +98,7 @@ class BookDetailView(FormMixin, DetailView):
         form.instance.book = self.get_object()
         form.instance.reader = self.request.user
         form.save()
-        messages.success(self.request, 'Review has been posted successfully')
+        messages.success(self.request, _('Review has been posted successfully'))
         return super().form_valid(form)
 
     def get_initial(self):
@@ -145,7 +146,7 @@ class UserBookInstanceUpdateView(LoginRequiredMixin, UserPassesTestMixin, Update
     def form_valid(self, form):
         form.instance.reader = self.request.user
         form.instance.status = 't'
-        messages.success(self.request, 'Book taken or extended')
+        messages.success(self.request, _('Book taken or extended'))
         return super().form_valid(form)
 
     def test_func(self):
@@ -174,7 +175,7 @@ class UserBookInstanceDeleteView(LoginRequiredMixin, UserPassesTestMixin, Delete
     def form_valid(self, form):
         book_instance = self.get_object()
         if book_instance.status == 't':
-            messages.success(self.request, 'Book returned or burned')
+            messages.success(self.request, _('Book returned or burned'))
         else:
-            messages.success(self.request, 'book reservation canceled')
+            messages.success(self.request, _('book reservation canceled'))
         return super().form_valid(form)
